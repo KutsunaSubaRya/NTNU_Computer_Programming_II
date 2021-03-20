@@ -6,7 +6,7 @@ signed main()
 	double num, flo;
 	int deter_num=0;
 	printf("Please enter a floating -point number (double precision): ");
-	scanf("%lf",&num);
+	if(scanf("%lf",&num)){};
 	if(num>=0) printf("Sign: %d\n",0);
 	else
 	{
