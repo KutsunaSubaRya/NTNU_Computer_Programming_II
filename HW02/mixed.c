@@ -19,12 +19,36 @@ int _gcd_(int32_t a, int32_t b)
 	return a;
 }
 
-int mixed_set( sMixedNumber *pNumber , int32_t a, int32_t b, int32_t c);
+int mixed_set( sMixedNumber *pNumber , int32_t a, int32_t b, int32_t c)
+{
+	if(b!=c && c==0) return -1;
+	if(a!=0 && (b<0 || c<0)) return -1;
+	if(a==0 && (b<0 || c<0))
+	{
+		if(b<0 && c<0)
+		{
+			b=abs(b);
+			c=abs(c);
+		}
+		else if(c<0 && b>=0)
+		{
+			c*=-1;
+			b*=-1;
+		}
+	}
+	if(b==c && b==0) c=1;
+	pNumber->a=a;
+	pNumber->b=b;
+	pNumber->c=c;
+	return 0;
+}
+	
 // return -1 if invalid; otherwise , return 0.
 
 int mixed_print( const sMixedNumber number);
 {
 	printf("(%d,%d,%d)\n",number.a, number.b, number.c);
+	return 0;
 }
 // in the form of (a,b,c)
 
@@ -105,7 +129,7 @@ void mixed_mul( sMixedNumber *pNumber , const sMixedNumber r1, const sMixedNumbe
 		r2b=r2.a*r2.c-r2.b;
 	pNumber->b=r1b*r2b;
 	pNumber->c=r1.c*r2.c;
-	printf("b=%d c=%d\n",pNumber->b, pNumber->c);
+	//printf("b=%d c=%d\n",pNumber->b, pNumber->c);
 	int gcd=_gcd_(pNumber->b, pNumber->c);
 	pNumber->b/=gcd;
 	pNumber->c/=gcd;
@@ -140,7 +164,7 @@ void mixed_div( sMixedNumber *pNumber , const sMixedNumber r1, const sMixedNumbe
 		r2b=r2.a*r2.c-r2.b;
 	pNumber->b=r1b*r2.c;
 	pNumber->c=r1.c*r2b;
-	printf("b=%d c=%d\n",pNumber->b, pNumber->c);
+	//printf("b=%d c=%d\n",pNumber->b, pNumber->c);
 	int gcd=_gcd_(pNumber->b, pNumber->c);
 	pNumber->b/=gcd;
 	pNumber->c/=gcd;

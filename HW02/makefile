@@ -3,8 +3,8 @@ CFLAGS= -Wall -Wextra -std=c11 -O2
 LDLIBS= -lm
 NAMEONE= hw0201
 ONE= hw0201.o mixed.o
-NAMET= hw0102
-TWO= hw0102.o
+NAMET= hw0202
+TWO= hw0202.o
 NAMETH= hw0103
 THR= hw0103.o
 NAMEFO= hw0104 Json.o
@@ -14,12 +14,12 @@ FIV= hw0105.o mystring.o
 
 .PHONY: all clean
 
-all: hw0201
+all: hw0201 hw0202
 
 hw0201: hw0201.o mixed.o
 	$(CC) $(CFLAGS) -o $(NAMEONE) $(ONE)  $(LDLIBS)
 
-hw0102: hw0102.o
+hw0202: hw0202.o
 	$(CC) $(CFLAGS) -o $(NAMET) $(TWO)  $(LDLIBS)
 
 hw0103: hw0103.o
@@ -33,3 +33,4 @@ hw0105: hw0105.o mystring.o
 
 clean:
 	-rm -rf $(NAMEONE) $(ONE)
+	-rm -rf $(NAMET) $(TWO)
