@@ -12,6 +12,7 @@ signed main()
 	{
 		deter_num=1;
 		printf("Sign: %d\n",1);
+		num*=(double)-1;
 	}
 	int expo=0,inte=num,int_arr[100005]={0},deci_arr[105]={0},flag=0,cnt=1;
 	flo=num-inte;
