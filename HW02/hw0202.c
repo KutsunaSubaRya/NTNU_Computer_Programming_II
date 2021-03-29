@@ -27,7 +27,7 @@ signed main()
 	//printf("%d\n", cnt);
 	int fl=0;
 	for(int i=cnt-2;i>=0;i--) deci_arr[fl++]=int_arr[i];
-	int regu_int=int_arr[cnt-1];
+	//int regu_int=int_arr[cnt-1];
 	//for(int j=cnt-1;j>=0;j--) printf("%d",int_arr[j]);
 	while(cnt!=1)
 	{

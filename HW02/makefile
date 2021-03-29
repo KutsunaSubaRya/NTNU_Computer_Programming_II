@@ -5,16 +5,14 @@ NAMEONE= hw0201
 ONE= hw0201.o mixed.o
 NAMET= hw0202
 TWO= hw0202.o
-NAMETH= hw0103
-THR= hw0103.o
-NAMEFO= hw0104 Json.o
-FOU= hw0104.o
-NAMEFI= hw0105
-FIV= hw0105.o mystring.o
+NAMETH= hw0203
+THR= hw0203.o
+NAMEFO= hw0204
+FOU= hw0204.o bignum.o
 
 .PHONY: all clean
 
-all: hw0201 hw0202
+all: hw0201 hw0202 hw0203 hw0204
 
 hw0201: hw0201.o mixed.o
 	$(CC) $(CFLAGS) -o $(NAMEONE) $(ONE)  $(LDLIBS)
@@ -22,15 +20,14 @@ hw0201: hw0201.o mixed.o
 hw0202: hw0202.o
 	$(CC) $(CFLAGS) -o $(NAMET) $(TWO)  $(LDLIBS)
 
-hw0103: hw0103.o
+hw0203: hw0203.o
 	$(CC) $(CFLAGS) -o $(NAMETH) $(THR)  $(LDLIBS)
 
-hw0104: hw0104.o Json.o
+hw0204: hw0204.o bignum.o
 	$(CC) $(CFLAGS) -o $(NAMEFO) $(FOU)  $(LDLIBS)
-
-hw0105: hw0105.o mystring.o
-	$(CC) $(CFLAGS) -o $(NAMEFI) $(FIV)  $(LDLIBS)
 
 clean:
 	-rm -rf $(NAMEONE) $(ONE)
 	-rm -rf $(NAMET) $(TWO)
+	-rm -rf $(NAMETH) $(THR)
+	-rm -rf $(NAMEFO) $(FOU)

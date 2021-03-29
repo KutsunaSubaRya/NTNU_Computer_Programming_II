@@ -25,7 +25,7 @@ signed main()
 	uByte num;
 	int deter=0;
 	printf("Please enter a byte (0-255):");
-	scanf("%d",&num.byte);
+	if(scanf("%d",&num.byte)){};
 	ptuByte(&num);
 	while(1)
 	{

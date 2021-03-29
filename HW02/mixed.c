@@ -45,9 +45,10 @@ int mixed_set( sMixedNumber *pNumber , int32_t a, int32_t b, int32_t c)
 	
 // return -1 if invalid; otherwise , return 0.
 
-int mixed_print( const sMixedNumber number);
+int mixed_print( const sMixedNumber number)
 {
-	printf("(%d,%d,%d)\n",number.a, number.b, number.c);
+	if(number.b==0) printf("(%d,%d,%d)\n",number.a, number.b, 0);
+	else printf("(%d,%d,%d)\n",number.a, number.b, number.c);
 	return 0;
 }
 // in the form of (a,b,c)
